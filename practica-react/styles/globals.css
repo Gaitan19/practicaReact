@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.image-light {
+  background: url('https://www.cuerpomente.com/medio/2020/12/04/como-empezar-bien-el-dia-exatisiarse-con-el-amanecer_527b4733_1200x1200.jpg');
+  background-size: cover;
+}
