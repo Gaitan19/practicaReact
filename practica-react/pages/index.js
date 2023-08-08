@@ -2,9 +2,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import { Container } from '@/components/Container/Index'
-import { Card } from '@/components/Card/Index'
-import { Text } from '@/components/Text/Index'
+import Container from '@/components/Container'
+import Card from '@/components/Card'
+
+// import { Text } from '@/components/Text/Index'
+// import { Shadow } from '@/components/Shadow/Index'
+// import {Menu} from '@/components/Menu'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,15 +22,11 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <Container>
-          <Card customClase={"image-light"}>
-            <Text text="the day"/>
+          <Card classText='text-light' classEfect='card-light' textCard='the day'/>
 
-          </Card>
-          <Card>
-            <Text text="the night"/>
-
-          </Card>
+          <Card classText='text-dark' classEfect='card-dark' textCard='the night'/>
         </Container>
+
       </main>
     </>
   )
