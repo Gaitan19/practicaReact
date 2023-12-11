@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  border: 0;
+  border-top: 0;
+  color: inherit;
+  margin: none;
+  opacity: 1;
+}
+
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+.form-check-input {
+  &[type="checkbox"] {
+    border-radius: 1.25em;
+  }
+
+  &:checked {
+    background-color: $dark-gray;
+    border-color: $dark-gray;
+  }
+
+  &:focus {
+    border-color: #86b7fe;
+    box-shadow: none;
+    outline: 0;
+  }
+}

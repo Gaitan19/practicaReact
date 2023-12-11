@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
 const Examples = () => {
@@ -15,7 +14,6 @@ const Examples = () => {
         return response.json();
       })
       .then((postsData) => {
-        // console.log("postsData :>> ", postsData);
         setPosts(() => postsData);
       })
       .catch((error) => {
@@ -25,21 +23,20 @@ const Examples = () => {
 
   useEffect(() => {
     if (posts.length < 1) {
-      //   const response = fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts`);
-      //   console.log("response :>> ", response);
       getAlPosts();
-      //   console.log("posts :>> ", posts);
     }
   }, []);
 
   const renderPosts = () => {
     return posts.map((post) => {
+      console.log("post :>> ", post);
       return (
-        <div className="Posts" key={post.id}>
+        <div className="Posts-container" key={post.id}>
+          <Image src={post.image} width={200} height={200} alt={post.slug} />
           <h2 className="Posts-title">
             {post.id}.{post.title}
           </h2>
-          <p className="Posts-contet">{post.content}</p>
+          <p className="Posts-content">{post.content}</p>
           <Link href={post.url} target="_blank">
             {post.url}
           </Link>
@@ -48,7 +45,7 @@ const Examples = () => {
     });
   };
 
-  return <div className="Container-posts">{renderPosts()}</div>;
+  return <div className="Posts">{renderPosts()}</div>;
 };
 
 export default Examples;
