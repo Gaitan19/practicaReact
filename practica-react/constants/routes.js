@@ -11,4 +11,9 @@ export const routes = [
     text: "users",
     link: "/Users",
   },
+  {
+    id: v4(),
+    text: "posts",
+    link: "/Posts",
+  },
 ];
