@@ -1,8 +1,11 @@
 import Head from "next/head";
 import Examples from "@/components/examples";
 import Navbar from "@/components/Navbar";
+import Users from "@/components/Users";
+import { Suspense } from "react";
+import { CSpinner } from "@coreui/react";
 
-export default function Home() {
+export default function UsersPage() {
   return (
     <>
       <Head>
@@ -12,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <Examples />
+      <Users />
     </>
   );
 }
