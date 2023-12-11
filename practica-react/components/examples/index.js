@@ -29,7 +29,6 @@ const Examples = () => {
 
   const renderPosts = () => {
     return posts.map((post) => {
-      console.log("post :>> ", post);
       return (
         <div className="Posts-container" key={post.id}>
           <Image src={post.image} width={200} height={200} alt={post.slug} />

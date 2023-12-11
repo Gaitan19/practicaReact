@@ -6,8 +6,20 @@ export default function App({ Component, pageProps }) {
   const clientId = process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID;
 
   return (
-    <Auth0Provider domain={domain} clientId={clientId} redirectUri="/">
-      <Component {...pageProps} />
-    </Auth0Provider>
+    <>
+      {typeof window !== "undefined" ? (
+        <Auth0Provider
+          domain={domain}
+          clientId={clientId}
+          authorizationParams={{
+            redirect_uri: window.location.origin,
+          }}
+        >
+          <Component {...pageProps} />
+        </Auth0Provider>
+      ) : (
+        <Component {...pageProps} />
+      )}
+    </>
   );
 }

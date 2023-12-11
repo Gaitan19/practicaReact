@@ -17,3 +17,9 @@ export const routes = [
     link: "/Posts",
   },
 ];
+
+export const routesLinks = {
+  login: "/",
+  posts: "/Posts",
+  Users: "/Users",
+};
