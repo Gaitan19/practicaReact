@@ -29,8 +29,6 @@ const Navbar = () => {
     }
   }, [isAuthenticated]);
 
-  console.log("user :>> ", user);
-
   const renderRoutes = () => {
     return routes
       .filter((route) => route.text !== "home")
