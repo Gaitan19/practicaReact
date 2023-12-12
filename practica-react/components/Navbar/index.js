@@ -1,6 +1,7 @@
 import { routes, routesLinks } from "@/constants/routes";
 import { useAuth0 } from "@auth0/auth0-react";
 import {
+  CAvatar,
   CCollapse,
   CContainer,
   CNavItem,
@@ -20,6 +21,7 @@ import Image from "next/image";
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const { logout, isAuthenticated, user } = useAuth0();
+  console.log("user :>> ", user);
   const router = useRouter();
 
   const handleRedirect = () => router.push(routesLinks.login);
@@ -67,7 +69,18 @@ const Navbar = () => {
           >
             <CNavbarNav>{renderRoutes()}</CNavbarNav>
             <div className="Navbar-tools">
-              {isAuthenticated && <span>{user.nickname}</span>}
+              {isAuthenticated && (
+                <>
+                  <Image
+                    className="Navbar-avatar"
+                    src={user.picture}
+                    width={76}
+                    height={76}
+                    alt="user avatar"
+                  />
+                  <span>{user.nickname}</span>
+                </>
+              )}
               <CTooltip content="Logout" placement="bottom">
                 <button className="Navbar-logout" onClick={() => logout()}>
                   <FaSignOutAlt />
