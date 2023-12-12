@@ -1,6 +1,7 @@
+import { CSpinner } from "@coreui/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 const Examples = () => {
   const [posts, setPosts] = useState([]);
@@ -44,7 +45,17 @@ const Examples = () => {
     });
   };
 
-  return <div className="Posts">{renderPosts()}</div>;
+  return (
+    <Suspense
+      fallback={
+        <div className="d-flex justify-content-center">
+          <CSpinner />
+        </div>
+      }
+    >
+      <div className="Posts">{renderPosts()}</div>
+    </Suspense>
+  );
 };
 
 export default Examples;

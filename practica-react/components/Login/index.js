@@ -4,11 +4,9 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 const Login = () => {
-  const { loginWithRedirect, isAuthenticated, logout, user } = useAuth0();
-  //   console.log("isAuthenticated :>> ", isAuthenticated);
-  //   console.log("user :>> ", user);
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
   const router = useRouter();
-  const handleRedirect = async () => await router.push(routesLinks.posts);
+  const handleRedirect = () => router.push(routesLinks.posts);
   useEffect(() => {
     if (isAuthenticated) {
       handleRedirect();
@@ -32,7 +30,6 @@ const Login = () => {
           </button>
         </div>
       </div>
-      {/*  */}
     </div>
   );
 };

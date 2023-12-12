@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Examples from "@/components/examples";
 import Navbar from "@/components/Navbar";
 import HeadPage from "@/components/HeadPage";

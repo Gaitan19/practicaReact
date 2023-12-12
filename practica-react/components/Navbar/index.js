@@ -22,7 +22,7 @@ const Navbar = () => {
   const { logout, isAuthenticated, user } = useAuth0();
   const router = useRouter();
 
-  const handleRedirect = async () => await router.push(routesLinks.login);
+  const handleRedirect = () => router.push(routesLinks.login);
   useEffect(() => {
     if (!isAuthenticated) {
       handleRedirect();
