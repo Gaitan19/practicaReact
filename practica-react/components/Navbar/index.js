@@ -21,7 +21,6 @@ import Image from "next/image";
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const { logout, isAuthenticated, user } = useAuth0();
-  console.log("user :>> ", user);
   const router = useRouter();
 
   const handleRedirect = () => router.push(routesLinks.login);

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -29,7 +28,6 @@ const Users = () => {
 
   const renderUsers = () => {
     return users.map((user) => {
-      console.log("post :>> ", user);
       return (
         <div className="User-container" key={user.id}>
           <h2 className="User-names">
