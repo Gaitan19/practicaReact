@@ -9330,11 +9330,12 @@ h1, .h1, h2, .h2, h3, .h3 {
 .Format-title {
   color: #15232b;
   font-family: Inter;
-  font-size: 14px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  text-align: center; }
+  text-align: center;
+  text-transform: capitalize; }
 
 .Format-text {
   color: #15232b;
@@ -9349,8 +9350,7 @@ h1, .h1, h2, .h2, h3, .h3 {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  justify-content: center;
-  width: 100%; }
+  justify-content: center; }
 
 .Format-button {
   background: none;
@@ -9381,19 +9381,56 @@ h1, .h1, h2, .h2, h3, .h3 {
     flex-direction: column;
     margin: 35px 0; }
 
-.Navbar-link {
-  margin: 0 20px; }
-
-.Navbar-tools {
+.Login {
   align-items: center;
-  display: flex;
+  background: #fff;
+  border: 1px solid #212529;
+  border-radius: 8px;
+  display: inline-flex;
+  flex-direction: column;
   gap: 10px;
-  margin-right: 20px; }
+  margin-top: 50px;
+  padding: 0 40px 40px; }
+  .Login-container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+    width: 100%; }
+  .Login-title {
+    background: #fbcd8d;
+    border-radius: 4px;
+    padding: 12px 166px;
+    width: 100%; }
+  .Login-button {
+    background: #f89b1c;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 15px;
+    padding: 12px 24px; }
 
-.Navbar-logout {
-  background: none;
-  border: none;
-  font-size: 20px;
-  text-align: center; }
+.Navbar {
+  background: #ffb74d; }
+  .Navbar-link {
+    color: #000;
+    margin: 0 20px; }
+    .Navbar-link:hover {
+      text-decoration: underline; }
+  .Navbar-tools {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    margin-right: 20px; }
+  .Navbar-logout {
+    background: none;
+    border: none;
+    font-size: 20px;
+    text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

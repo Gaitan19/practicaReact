@@ -4,7 +4,6 @@ import {
   CCollapse,
   CContainer,
   CNavItem,
-  CNavLink,
   CNavbar,
   CNavbarBrand,
   CNavbarNav,
@@ -16,6 +15,7 @@ import { useRouter } from "next/router";
 import { FaSignOutAlt } from "react-icons/fa";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
@@ -45,16 +45,19 @@ const Navbar = () => {
       });
   };
 
-  // const handleLogout = async () => {
-  //   await logout();
-  //   await router.push(routesLinks.login);
-  // };
-
   return (
     <>
-      <CNavbar expand="lg" colorScheme="light" className="bg-light">
+      <CNavbar expand="lg" colorScheme="light" className="Navbar">
         <CContainer fluid>
-          <CNavbarBrand href={routesLinks.posts}>PostsApp</CNavbarBrand>
+          <CNavbarBrand href="#">
+            <Image
+              width={112}
+              height={79}
+              src="/logo-smbs.png"
+              alt="SMBS logo"
+              priority
+            />
+          </CNavbarBrand>
           <CNavbarToggler
             aria-label="Toggle navigation"
             aria-expanded={visible}
